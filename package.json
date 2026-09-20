@@ -1,0 +1,44 @@
+{
+  "name": "deploy-test-nestjs",
+  "version": "1.0.0",
+  "description": "Canonical NestJS taskboard fixture: NestJS + TypeORM SQLite persistence, validated CRUD/search/filter, liveness/readiness, release marker, production verification.",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "bash scripts/build.sh",
+    "start": "node dist/main",
+    "start:prod": "node dist/main",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "vitest run --config ./vitest.config.e2e.mts",
+    "test:watch": "vitest",
+    "smoke": "bash scripts/smoke.sh",
+    "verify": "bash scripts/verify.sh"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.0.3",
+    "@nestjs/core": "^12.0.3",
+    "@nestjs/platform-express": "^12.0.3",
+    "better-sqlite3": "^12.11.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "typeorm": "^1.1.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^12.0.3",
+    "@nestjs/testing": "^12.0.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.20.4",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}
